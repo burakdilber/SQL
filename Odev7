@@ -1,0 +1,19 @@
+-- Soru 1
+SELECT rating, COUNT(*) FROM film
+GROUP BY rating;
+
+-- Soru 2
+SELECT replacement_cost, COUNT(replacement_cost) FROM film
+GROUP BY replacement_cost
+HAVING COUNT(replacement_cost) > 50
+ORDER BY COUNT(replacement_cost);
+
+-- Soru 3
+SELECT store_id, COUNT(store_id) FROM customer
+GROUP BY store_id;
+
+-- Soru 4
+SELECT country_id, COUNT(city) FROM city
+GROUP BY country_id
+ORDER BY COUNT(city) DESC
+LIMIT 1;
