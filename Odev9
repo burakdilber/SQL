@@ -1,0 +1,11 @@
+-- Soru 1
+SELECT city, country FROM country
+INNER JOIN city ON country.country_id = city.country_id;
+
+-- Soru 2
+SELECT first_name, last_name FROM customer
+INNER JOIN payment ON payment.payment_id = customer.customer_id;
+
+-- Soru 3
+SELECT first_name, last_name FROM customer
+INNER JOIN rental ON rental.rental_id = customer.customer_id;
