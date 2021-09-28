@@ -1,0 +1,32 @@
+-- Soru 1
+SELECT * FROM film WHERE length > 
+(
+	SELECT AVG(length) FROM film
+);
+
+-- Soru 2
+SELECT count(*) FROM film 
+WHERE rental_rate = 
+(
+	SELECT MAX(rental_rate) FROM film
+);
+
+-- Soru 3
+SELECT * FROM film 
+WHERE rental_rate = 
+(
+	SELECT MIN(rental_rate) FROM film
+)
+UNION
+SELECT * FROM film 
+WHERE rental_rate = 
+(
+	SELECT MIN(replacement_cost) FROM film
+)
+
+-- Soru 4
+SELECT * FROM payment
+WHERE amount =
+(
+	SELECT MAX(amount) FROM payment
+);
